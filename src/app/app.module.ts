@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RecordVoiceComponent } from './record-voice/record-voice.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RecordVoiceComponent
   ],
   imports: [
     BrowserModule,

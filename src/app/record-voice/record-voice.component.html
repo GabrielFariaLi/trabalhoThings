@@ -1,0 +1,38 @@
+<p (click)="comecarGravar()">play</p>
+<p (click)="pararGravar()">parar</p>
+
+<div id="waveform"></div>
+
+<div style="text-align: center; margin-top: 200px">
+  <button
+    (click)="initiateRecording()"
+    class="btn btn-primary"
+    *ngIf="!recording"
+    style="
+      cursor: pointer;
+      background-color: green;
+      color: white;
+      font-size: 40px;
+    "
+  >
+    Start Recording
+  </button>
+  <button
+    (click)="stopRecording()"
+    class="btn btn-danger"
+    *ngIf="recording"
+    style="
+      cursor: pointer;
+      background-color: red;
+      color: white;
+      font-size: 40px;
+    "
+  >
+    Stop Recording
+  </button>
+
+  {{ this.formattedTime }}
+  <audio controls="" *ngIf="url">
+    <source [src]="sanitize(url)" type="audio/wav" />
+  </audio>
+</div>
